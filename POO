@@ -1,0 +1,45 @@
+package udemy;
+
+public class retangulo {
+
+    public double largura;
+    public double altura;
+
+    public double area() {
+
+        return largura * altura;
+    }
+
+    public double perimetro() {
+
+        return 2 * (largura + altura);
+    }
+    
+    public double diagonal() {
+        return Math.sqrt(largura * largura + altura * altura);
+    }
+}
+
+package udemy;
+
+import java.util.Scanner;
+import java.util.Locale;
+
+import udemy.retangulo;
+
+public class exerc {
+    public static void main(String[] args) {
+
+        retangulo ret = new retangulo();
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Digite qual o valor da largura: ");
+        ret.largura = sc.nextDouble();
+        System.out.println("Digite qual o valor da altura: ");
+        ret.altura = sc.nextDouble();
+
+        System.out.println("Área: " + ret.area());
+        System.out.println("Perimentro: " + ret.perimetro());
+        System.out.println("Diagonal: " + ret.diagonal());
+    }
+}
