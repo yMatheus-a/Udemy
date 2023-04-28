@@ -45,3 +45,60 @@ public class exerc {
         System.out.println("Diagonal: " + ret.diagonal());
     }
 }
+
+Segundo Exerc:
+
+package udemy;
+
+import java.util.Scanner;
+import java.util.Locale;
+
+import udemy.funcionario;
+
+public class exerc {
+    public static void main(String[] args) {
+
+        funcionario func = new funcionario();
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Digite qual o seu nome: ");
+        func.nome = sc.nextLine();
+        System.out.println("Digite qual o seu salario bruto: ");
+        func.salarioBruto = sc.nextDouble();
+        System.out.println("Digite qual o seu imposto: ");
+        func.imposto = sc.nextDouble();
+
+        System.out.println("Funcionario: " + func);
+        System.out.println("-----------------------");
+        System.out.println("Qual a porcentagem de aumento do seu salário: ");
+        double porcentagem = sc.nextDouble();
+        func.aumento(porcentagem);
+
+        System.out.println("Novo salário: " + func);
+        sc.close();
+    }
+}
+
+package udemy;
+
+public class funcionario {
+
+    public String nome;
+    public double salarioBruto;
+    public double imposto;
+
+    public double salarioLiquido() {
+
+        return salarioBruto - imposto;
+    }
+
+    public void aumento(double porcentagem) {
+        salarioBruto += salarioBruto * porcentagem / 100;
+    }
+
+    public String toString() {
+        return nome + ", $" + salarioLiquido();
+    }
+    
+}
+
